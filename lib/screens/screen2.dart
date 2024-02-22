@@ -11,7 +11,7 @@ class Screen2 extends StatefulWidget {
 }
 
 class _Screen2State extends State<Screen2> {
-  int _selectedindex = 0;
+  int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -490,12 +490,12 @@ class _Screen2State extends State<Screen2> {
             GestureDetector(
               onTap: () {
                 setState(() {
-                  _selectedindex = BABItem.home.index;
+                  _selectedIndex = BABItem.home.index;
                 });
               },
               child: Icon(
                 Icons.home,
-                color: _selectedindex == BABItem.home.index
+                color: _selectedIndex == BABItem.home.index
                     ? Colors.black
                     : Colors.black.withOpacity(0.4),
               ),
@@ -503,12 +503,12 @@ class _Screen2State extends State<Screen2> {
             GestureDetector(
               onTap: () {
                 setState(() {
-                  _selectedindex = BABItem.card.index;
+                  _selectedIndex = BABItem.card.index;
                 });
               },
               child: Icon(
                 Icons.credit_card,
-                color: _selectedindex == BABItem.card.index
+                color: _selectedIndex == BABItem.card.index
                     ? Colors.black
                     : Colors.black.withOpacity(0.4),
               ),
@@ -529,12 +529,12 @@ class _Screen2State extends State<Screen2> {
             GestureDetector(
               onTap: () {
                 setState(() {
-                  _selectedindex = BABItem.heart.index;
+                  _selectedIndex = BABItem.heart.index;
                 });
               },
               child: Icon(
                 Icons.heart_broken_rounded,
-                color: _selectedindex == BABItem.heart.index
+                color: _selectedIndex == BABItem.heart.index
                     ? Colors.black
                     : Colors.black.withOpacity(0.4),
               ),
@@ -542,12 +542,12 @@ class _Screen2State extends State<Screen2> {
             GestureDetector(
               onTap: () {
                 setState(() {
-                  _selectedindex = BABItem.discover.index;
+                  _selectedIndex = BABItem.discover.index;
                 });
               },
               child: Icon(
                 Icons.add_alarm_sharp,
-                color: _selectedindex == BABItem.discover.index
+                color: _selectedIndex == BABItem.discover.index
                     ? Colors.black
                     : Colors.black.withOpacity(0.4),
               ),
