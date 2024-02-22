@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Screen2 extends StatelessWidget {
+enum BABItem { home, card, heart, discover }
+
+class Screen2 extends StatefulWidget {
   const Screen2({super.key});
+
+  @override
+  State<Screen2> createState() => _Screen2State();
+}
+
+class _Screen2State extends State<Screen2> {
+  int _selectedindex = 0;
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -473,6 +482,78 @@ class Screen2 extends StatelessWidget {
             ),
           ),
         ],
+      ),
+      bottomNavigationBar: BottomAppBar(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  _selectedindex = BABItem.home.index;
+                });
+              },
+              child: Icon(
+                Icons.home,
+                color: _selectedindex == BABItem.home.index
+                    ? Colors.black
+                    : Colors.black.withOpacity(0.4),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  _selectedindex = BABItem.card.index;
+                });
+              },
+              child: Icon(
+                Icons.credit_card,
+                color: _selectedindex == BABItem.card.index
+                    ? Colors.black
+                    : Colors.black.withOpacity(0.4),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {},
+              child: Container(
+                width: width * 0.15,
+                height: width * 0.15,
+                decoration: const BoxDecoration(
+                    color: Colors.black, shape: BoxShape.circle),
+                child: const Icon(
+                  Icons.compare_arrows,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  _selectedindex = BABItem.heart.index;
+                });
+              },
+              child: Icon(
+                Icons.heart_broken_rounded,
+                color: _selectedindex == BABItem.heart.index
+                    ? Colors.black
+                    : Colors.black.withOpacity(0.4),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  _selectedindex = BABItem.discover.index;
+                });
+              },
+              child: Icon(
+                Icons.add_alarm_sharp,
+                color: _selectedindex == BABItem.discover.index
+                    ? Colors.black
+                    : Colors.black.withOpacity(0.4),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
