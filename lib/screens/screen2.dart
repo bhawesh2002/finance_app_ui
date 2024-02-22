@@ -199,7 +199,7 @@ class Screen2 extends StatelessWidget {
                             ),
                             Padding(
                               padding: EdgeInsets.symmetric(
-                                  horizontal: constraints.maxWidth * 0.09),
+                                  horizontal: constraints.maxWidth * 0.0855),
                             ),
                             //Withdraw
                             Column(
@@ -222,7 +222,7 @@ class Screen2 extends StatelessWidget {
                             ),
                             Padding(
                               padding: EdgeInsets.symmetric(
-                                  horizontal: constraints.maxWidth * 0.09),
+                                  horizontal: constraints.maxWidth * 0.0855),
                             ),
                             //Transfer
                             Column(
