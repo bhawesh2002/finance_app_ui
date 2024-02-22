@@ -1,4 +1,5 @@
 import 'package:finance_app_ui/colors/colors.dart';
+import 'package:finance_app_ui/screens/screen2.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -154,36 +155,54 @@ class Screen1 extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 //Skip option
-                Text(
-                  "Skip",
-                  style: GoogleFonts.workSans(
-                      fontWeight: FontWeight.bold, color: Colors.white),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const Screen2(),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    "Skip",
+                    style: GoogleFonts.workSans(
+                        fontWeight: FontWeight.bold, color: Colors.white),
+                  ),
                 ),
                 //Continue Button
-                Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(width),
-                      color: Colors.black),
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 20,
-                    vertical: 10,
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Text(
-                        "Continue",
-                        style: GoogleFonts.workSans(
-                            fontWeight: FontWeight.bold, color: Colors.white),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const Screen2(),
                       ),
-                      const Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 5),
-                      ),
-                      const Icon(
-                        Icons.arrow_forward,
-                        color: Colors.white,
-                      )
-                    ],
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(width),
+                        color: Colors.black),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 10,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Text(
+                          "Continue",
+                          style: GoogleFonts.workSans(
+                              fontWeight: FontWeight.bold, color: Colors.white),
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 5),
+                        ),
+                        const Icon(
+                          Icons.arrow_forward,
+                          color: Colors.white,
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ],
