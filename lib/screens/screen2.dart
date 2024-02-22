@@ -1,3 +1,4 @@
+import 'package:finance_app_ui/screens/screen3.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -514,7 +515,13 @@ class _Screen2State extends State<Screen2> {
               ),
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const Screen3(),
+                  ),
+                );
+              },
               child: Container(
                 width: width * 0.15,
                 height: width * 0.15,
