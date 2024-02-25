@@ -15,7 +15,7 @@ class Screen3 extends StatelessWidget {
             top: 0,
             child: Container(
               width: width,
-              height: height * 0.25,
+              height: height * 0.28,
               color: cardColor,
               child: Padding(
                 padding: EdgeInsets.symmetric(
@@ -72,7 +72,7 @@ class Screen3 extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: height * 0.265,
+            top: height * 0.3,
             child: SizedBox(
               width: width,
               height: height * 0.1,
@@ -149,7 +149,7 @@ class Screen3 extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: height * 0.36,
+            top: height * 0.4,
             child: SizedBox(
               width: width,
               height: height * 0.1,
@@ -242,7 +242,7 @@ class Screen3 extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               child: Container(
                 width: width,
-                height: height * 0.525,
+                height: height * 0.48,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border(
@@ -253,46 +253,51 @@ class Screen3 extends StatelessWidget {
                   ),
                 ),
                 padding: EdgeInsets.symmetric(
-                  vertical: height * 0.035,
-                  horizontal: width * 0.085,
+                  vertical: height * 0.030,
+                  horizontal: width * 0.080,
                 ),
                 child: LayoutBuilder(
                   builder: (context, constraints) => Stack(
                     children: [
-                      GridView.count(
-                        physics: const NeverScrollableScrollPhysics(),
-                        crossAxisCount: 3,
-                        childAspectRatio: 1.5,
-                        padding: EdgeInsets.zero,
-                        children: List.generate(12, (index) {
-                          if (index == 9) {
-                            return Center(
-                              child: Text(
-                                ".",
-                                style: GoogleFonts.workSans(
-                                  fontSize: constraints.maxWidth * 0.08,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            );
-                          } else if (index == 11) {
-                            return const Center(
-                                child: Icon(
-                              Icons.arrow_circle_left,
-                              color: Colors.black,
-                            ));
-                          } else {
-                            return Center(
-                              child: Text(
-                                (index + 1).toString(),
-                                style: GoogleFonts.workSans(
-                                  fontSize: constraints.maxWidth * 0.08,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            );
-                          }
-                        }),
+                      Placeholder(
+                        child: SizedBox(
+                          height: constraints.maxHeight * 0.85,
+                          child: GridView.count(
+                            physics: const NeverScrollableScrollPhysics(),
+                            crossAxisCount: 3,
+                            childAspectRatio: 1.5,
+                            padding: EdgeInsets.zero,
+                            children: List.generate(12, (index) {
+                              if (index == 9) {
+                                return Center(
+                                  child: Text(
+                                    ".",
+                                    style: GoogleFonts.workSans(
+                                      fontSize: constraints.maxWidth * 0.08,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                );
+                              } else if (index == 11) {
+                                return const Center(
+                                    child: Icon(
+                                  Icons.arrow_circle_left,
+                                  color: Colors.black,
+                                ));
+                              } else {
+                                return Center(
+                                  child: Text(
+                                    (index + 1).toString(),
+                                    style: GoogleFonts.workSans(
+                                      fontSize: constraints.maxWidth * 0.08,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                );
+                              }
+                            }),
+                          ),
+                        ),
                       ),
                       //Send Money Button
                       Positioned.fill(
