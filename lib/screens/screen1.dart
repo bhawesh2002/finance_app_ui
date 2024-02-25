@@ -94,48 +94,49 @@ class Screen1 extends StatelessWidget {
                   ),
                 ),
                 //Continue Button
-                GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const Screen2(),
-                      ),
-                    );
-                  },
-                  child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(width),
-                        color: Colors.black),
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 20,
-                      vertical: 5,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        TextButton(
-                          onPressed: () {},
-                          style: ButtonStyle(
-                              padding: MaterialStateProperty.all(
-                                  const EdgeInsets.symmetric(horizontal: 5))),
-                          child: Text(
-                            "Continue",
-                            style: GoogleFonts.workSans(
-                                fontSize: width * 0.04,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.white),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const Screen2(),
                           ),
+                        );
+                      },
+                      style: ButtonStyle(
+                          padding: MaterialStateProperty.all(
+                              const EdgeInsets.symmetric(horizontal: 5))),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(width),
+                            color: Colors.black),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 20,
+                          vertical: 15,
                         ),
-                        const Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 5),
+                        child: Row(
+                          children: [
+                            Text(
+                              "Continue",
+                              style: GoogleFonts.workSans(
+                                  fontSize: width * 0.04,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.white),
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 5),
+                            ),
+                            const Icon(
+                              Icons.arrow_forward,
+                              color: Colors.white,
+                            )
+                          ],
                         ),
-                        const Icon(
-                          Icons.arrow_forward,
-                          color: Colors.white,
-                        )
-                      ],
+                      ),
                     ),
-                  ),
+                  ],
                 ),
               ],
             ),
