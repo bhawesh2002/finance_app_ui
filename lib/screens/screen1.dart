@@ -41,7 +41,7 @@ class Screen1 extends StatelessWidget {
           ),
           //Text: "What is your goal?"
           Positioned(
-            bottom: height * 0.28,
+            bottom: height * 0.3,
             left: width * 0.08,
             child: Opacity(
               opacity: 0.4,
@@ -57,14 +57,14 @@ class Screen1 extends StatelessWidget {
           //Expanded button
           Positioned(
             left: width * 0.08,
-            bottom: height * 0.2,
+            bottom: height * 0.22,
             child: selectableButton(context,
-                buttonName: "Expanded", isSelected: true),
+                buttonName: "Expend", isSelected: true),
           ),
           //Investment button
           Positioned(
             left: width * 0.08,
-            bottom: height * 0.12,
+            bottom: height * 0.15,
             child: selectableButton(context,
                 buttonName: "Investment", isSelected: false),
           ),
@@ -88,7 +88,9 @@ class Screen1 extends StatelessWidget {
                   child: Text(
                     "Skip",
                     style: GoogleFonts.workSans(
-                        fontWeight: FontWeight.bold, color: Colors.white),
+                        fontSize: width * 0.04,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white),
                   ),
                 ),
                 //Continue Button
@@ -106,15 +108,23 @@ class Screen1 extends StatelessWidget {
                         color: Colors.black),
                     padding: const EdgeInsets.symmetric(
                       horizontal: 20,
-                      vertical: 10,
+                      vertical: 5,
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Text(
-                          "Continue",
-                          style: GoogleFonts.workSans(
-                              fontWeight: FontWeight.bold, color: Colors.white),
+                        TextButton(
+                          onPressed: () {},
+                          style: ButtonStyle(
+                              padding: MaterialStateProperty.all(
+                                  const EdgeInsets.symmetric(horizontal: 5))),
+                          child: Text(
+                            "Continue",
+                            style: GoogleFonts.workSans(
+                                fontSize: width * 0.04,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white),
+                          ),
                         ),
                         const Padding(
                           padding: EdgeInsets.symmetric(horizontal: 5),

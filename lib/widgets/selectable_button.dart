@@ -22,7 +22,7 @@ Widget selectableButton(BuildContext context,
             buttonName,
             style: GoogleFonts.workSans(
                 color: isSelected ? Colors.black : Colors.white,
-                fontSize: width * 0.04,
+                fontSize: width * 0.042,
                 fontWeight: FontWeight.bold),
           ),
           isSelected ? const Icon(Icons.check) : const Icon(null),
