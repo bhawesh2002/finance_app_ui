@@ -1,5 +1,6 @@
 import 'package:finance_app_ui/colors/colors.dart';
 import 'package:finance_app_ui/screens/screen2.dart';
+import 'package:finance_app_ui/widgets/card.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -31,50 +32,11 @@ class Screen1 extends StatelessWidget {
               ),
             ),
           ),
-          //Shadow of the card
-          Positioned(
-            top: height * 0.28,
-            left: width / 2 * 0.55,
-            child: Transform.rotate(
-              angle: 65,
-              child: Transform.translate(
-                offset: const Offset(8, -8),
-                child: Container(
-                  height: height * 0.35,
-                  width: width * 0.45,
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(width * 0.05),
-                  ),
-                ),
-              ),
-            ),
-          ),
           //Card Widget
           Positioned(
             top: height * 0.28,
             left: width / 2 * 0.55,
-            child: Transform.rotate(
-              angle: 65,
-              child: Container(
-                height: height * 0.35,
-                width: width * 0.45,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(width: 2),
-                  borderRadius: BorderRadius.circular(width * 0.05),
-                ),
-                child: Container(
-                  height: height * 0.30,
-                  width: width * 0.40,
-                  decoration: BoxDecoration(
-                    color: cardColor,
-                    border: Border.all(width: 10, color: Colors.white),
-                    borderRadius: BorderRadius.circular(width * 0.05),
-                  ),
-                ),
-              ),
-            ),
+            child: cardWidget(context, angle: 2),
           ),
           //Text: "What is your goal?"
           Positioned(
