@@ -259,54 +259,52 @@ class Screen3 extends StatelessWidget {
                 child: LayoutBuilder(
                   builder: (context, constraints) => Stack(
                     children: [
-                      Placeholder(
-                        child: SizedBox(
-                          height: constraints.maxHeight * 0.85,
-                          child: GridView.count(
-                            physics: const NeverScrollableScrollPhysics(),
-                            crossAxisCount: 3,
-                            childAspectRatio: 1.5,
-                            padding: EdgeInsets.zero,
-                            children: List.generate(12, (index) {
-                              if (index == 10) {
-                                return Center(
-                                  child: Text(
-                                    "10",
-                                    style: GoogleFonts.workSans(
-                                      fontSize: constraints.maxWidth * 0.08,
-                                      fontWeight: FontWeight.w600,
-                                    ),
+                      SizedBox(
+                        height: constraints.maxHeight * 0.85,
+                        child: GridView.count(
+                          physics: const NeverScrollableScrollPhysics(),
+                          crossAxisCount: 3,
+                          childAspectRatio: 1.5,
+                          padding: EdgeInsets.zero,
+                          children: List.generate(12, (index) {
+                            if (index == 10) {
+                              return Center(
+                                child: Text(
+                                  "10",
+                                  style: GoogleFonts.workSans(
+                                    fontSize: constraints.maxWidth * 0.08,
+                                    fontWeight: FontWeight.w600,
                                   ),
-                                );
-                              } else if (index == 9) {
-                                return Center(
-                                  child: Text(
-                                    ".",
-                                    style: GoogleFonts.workSans(
-                                      fontSize: constraints.maxWidth * 0.08,
-                                      fontWeight: FontWeight.w600,
-                                    ),
+                                ),
+                              );
+                            } else if (index == 9) {
+                              return Center(
+                                child: Text(
+                                  ".",
+                                  style: GoogleFonts.workSans(
+                                    fontSize: constraints.maxWidth * 0.08,
+                                    fontWeight: FontWeight.w600,
                                   ),
-                                );
-                              } else if (index == 11) {
-                                return const Center(
-                                    child: Icon(
-                                  Icons.arrow_circle_left,
-                                  color: Colors.black,
-                                ));
-                              } else {
-                                return Center(
-                                  child: Text(
-                                    (index + 1).toString(),
-                                    style: GoogleFonts.workSans(
-                                      fontSize: constraints.maxWidth * 0.08,
-                                      fontWeight: FontWeight.w600,
-                                    ),
+                                ),
+                              );
+                            } else if (index == 11) {
+                              return const Center(
+                                  child: Icon(
+                                Icons.arrow_circle_left,
+                                color: Colors.black,
+                              ));
+                            } else {
+                              return Center(
+                                child: Text(
+                                  (index + 1).toString(),
+                                  style: GoogleFonts.workSans(
+                                    fontSize: constraints.maxWidth * 0.08,
+                                    fontWeight: FontWeight.w600,
                                   ),
-                                );
-                              }
-                            }),
-                          ),
+                                ),
+                              );
+                            }
+                          }),
                         ),
                       ),
                       //Send Money Button
