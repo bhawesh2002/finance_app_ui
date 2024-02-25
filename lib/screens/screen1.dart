@@ -1,6 +1,7 @@
 import 'package:finance_app_ui/colors/colors.dart';
 import 'package:finance_app_ui/screens/screen2.dart';
 import 'package:finance_app_ui/widgets/card.dart';
+import 'package:finance_app_ui/widgets/selectable_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -27,20 +28,20 @@ class Screen1 extends StatelessWidget {
               "Get better\nwith money.",
               style: GoogleFonts.workSans(
                 color: Colors.white,
-                fontSize: width * 0.12,
+                fontSize: width * 0.11,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
           //Card Widget
           Positioned(
-            top: height * 0.28,
+            top: height * 0.25,
             left: width / 2 * 0.55,
             child: cardWidget(context, angle: 2),
           ),
           //Text: "What is your goal?"
           Positioned(
-            bottom: height * 0.26,
+            bottom: height * 0.28,
             left: width * 0.08,
             child: Opacity(
               opacity: 0.4,
@@ -56,57 +57,16 @@ class Screen1 extends StatelessWidget {
           //Expanded button
           Positioned(
             left: width * 0.08,
-            bottom: height * 0.18,
-            child: Container(
-              width: width * 0.8,
-              height: height * 0.06,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(width * 0.5),
-              ),
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: width * 0.06),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Expanded",
-                      style: GoogleFonts.workSans(
-                          fontSize: width * 0.04, fontWeight: FontWeight.bold),
-                    ),
-                    const Icon(Icons.check),
-                  ],
-                ),
-              ),
-            ),
+            bottom: height * 0.2,
+            child: selectableButton(context,
+                buttonName: "Expanded", isSelected: true),
           ),
           //Investment button
           Positioned(
             left: width * 0.08,
-            bottom: height * 0.11,
-            child: Container(
-              width: width * 0.8,
-              height: height * 0.06,
-              decoration: BoxDecoration(
-                border: Border.all(width: 1, color: Colors.white),
-                borderRadius: BorderRadius.circular(width * 0.5),
-              ),
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: width * 0.06),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Investment",
-                      style: GoogleFonts.workSans(
-                          color: Colors.white,
-                          fontSize: width * 0.04,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            bottom: height * 0.12,
+            child: selectableButton(context,
+                buttonName: "Investment", isSelected: false),
           ),
           //Skip and Continue options
           Positioned(
