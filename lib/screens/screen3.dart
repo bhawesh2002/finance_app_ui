@@ -268,7 +268,17 @@ class Screen3 extends StatelessWidget {
                             childAspectRatio: 1.5,
                             padding: EdgeInsets.zero,
                             children: List.generate(12, (index) {
-                              if (index == 9) {
+                              if (index == 10) {
+                                return Center(
+                                  child: Text(
+                                    "10",
+                                    style: GoogleFonts.workSans(
+                                      fontSize: constraints.maxWidth * 0.08,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                );
+                              } else if (index == 9) {
                                 return Center(
                                   child: Text(
                                     ".",
