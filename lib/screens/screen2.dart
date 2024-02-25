@@ -68,7 +68,7 @@ class _Screen2State extends State<Screen2> {
                         width: constraints.maxWidth * 0.85,
                         height: constraints.maxHeight * 0.25,
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.2),
+                          color: Colors.white.withOpacity(0.1),
                           borderRadius: BorderRadius.circular(
                               constraints.maxWidth * 0.04),
                         ),
