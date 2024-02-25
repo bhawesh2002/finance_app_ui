@@ -1,6 +1,6 @@
 import 'package:finance_app_ui/colors/colors.dart';
 import 'package:finance_app_ui/screens/screen2.dart';
-import 'package:finance_app_ui/widgets/card.dart';
+import 'package:finance_app_ui/widgets/cardWidget.dart';
 import 'package:finance_app_ui/widgets/selectable_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
