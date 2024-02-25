@@ -37,7 +37,7 @@ class Screen1 extends StatelessWidget {
           Positioned(
             top: height * 0.25,
             left: width / 2 * 0.55,
-            child: cardWidget(context, angle: 2),
+            child: const CardWidget(angle: 2),
           ),
           //Text: "What is your goal?"
           Positioned(
@@ -58,15 +58,15 @@ class Screen1 extends StatelessWidget {
           Positioned(
             left: width * 0.08,
             bottom: height * 0.22,
-            child: selectableButton(context,
-                buttonName: "Expend", isSelected: true),
+            child: SelectableButton(
+                onSelected: () {}, buttonName: "Expend", value: true),
           ),
           //Investment button
           Positioned(
             left: width * 0.08,
             bottom: height * 0.15,
-            child: selectableButton(context,
-                buttonName: "Investment", isSelected: false),
+            child: SelectableButton(
+                onSelected: () {}, buttonName: "Investment", value: false),
           ),
           //Skip and Continue options
           Positioned(
@@ -94,50 +94,7 @@ class Screen1 extends StatelessWidget {
                   ),
                 ),
                 //Continue Button
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    TextButton(
-                      onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => const Screen2(),
-                          ),
-                        );
-                      },
-                      style: ButtonStyle(
-                          padding: MaterialStateProperty.all(
-                              const EdgeInsets.symmetric(horizontal: 5))),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(width),
-                            color: Colors.black),
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 20,
-                          vertical: 15,
-                        ),
-                        child: Row(
-                          children: [
-                            Text(
-                              "Continue",
-                              style: GoogleFonts.workSans(
-                                  fontSize: width * 0.04,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.white),
-                            ),
-                            const Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 5),
-                            ),
-                            const Icon(
-                              Icons.arrow_forward,
-                              color: Colors.white,
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                continueButton(context)
               ],
             ),
           ),
@@ -145,4 +102,41 @@ class Screen1 extends StatelessWidget {
       ),
     );
   }
+}
+
+TextButton continueButton(BuildContext context) {
+  double width = MediaQuery.of(context).size.width;
+  return TextButton(
+    onPressed: () {},
+    style: ButtonStyle(
+        padding: MaterialStateProperty.all(
+            const EdgeInsets.symmetric(horizontal: 5))),
+    child: Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(double.infinity),
+          color: Colors.black),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 20,
+        vertical: 15,
+      ),
+      child: Row(
+        children: [
+          Text(
+            "Continue",
+            style: GoogleFonts.workSans(
+                fontSize: width * 0.04,
+                fontWeight: FontWeight.w600,
+                color: Colors.white),
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 5),
+          ),
+          const Icon(
+            Icons.arrow_forward,
+            color: Colors.white,
+          )
+        ],
+      ),
+    ),
+  );
 }
