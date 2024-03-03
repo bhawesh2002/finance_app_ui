@@ -94,7 +94,7 @@ class Screen1 extends StatelessWidget {
                   ),
                 ),
                 //Continue Button
-                continueButton(context)
+                continueButton(context, onPressed: () {})
               ],
             ),
           ),
@@ -104,10 +104,10 @@ class Screen1 extends StatelessWidget {
   }
 }
 
-TextButton continueButton(BuildContext context) {
+TextButton continueButton(BuildContext context, {VoidCallback? onPressed}) {
   double width = MediaQuery.of(context).size.width;
   return TextButton(
-    onPressed: () {},
+    onPressed: onPressed,
     style: ButtonStyle(
         padding: MaterialStateProperty.all(
             const EdgeInsets.symmetric(horizontal: 5))),
