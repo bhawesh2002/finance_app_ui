@@ -1,8 +1,10 @@
 # finance_app_ui
 
-I have translated the following [UI](https://dribbble.com/shots/19492511-Finance-mobile-app) by [Hong Ji](https://dribbble.com/Jihoooong) to flutter app UI(UI only)
+I have translated the following **UI**: https://dribbble.com/shots/19492511-Finance-mobile-app 
 
-## The UI: 
+by **Hong Ji** : https://dribbble.com/Jihoooong to **flutter app (UI only)**
+
+## UI by Hong Ji: 
 ![Finance App Hong Ji(Dribbble)](https://github.com/bhawesh2002/finance_app_ui/assets/55053472/e16adc15-06f4-4581-8b33-1afc6e5e6651)
 
 ## Flutter app UI I made : 
